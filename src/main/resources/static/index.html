@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=innn6py23a&submodules=geocoder"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="/JS/API/Address.js"></script>
+    <script src="/JS/API/search.js"></script>
+    <script src="/JS/API/district.js"></script>
+    <script src="/JS/API/NaverMap.js"></script>
+    <script src="/JS/API/GridLocation.js"></script>
+    <script src="/JS/API/Address_Search.js"></script>
+    <script src="/JS/API/Marker.js"></script>
+</head>
+<body>
+
+<!-- 검색 셀렉트 창 -->
+<div class="search">
+    <input id="address" type="text" placeholder="검색할 주소">
+    <select id="city">
+        <option value="" selected disabled hidden>시/군/구</option>
+        <option value="h1">천안시 동남구</option>
+        <option value="h2">천안시 서북구</option>
+    </select>
+    <select id="district">
+        <option value="" selected disabled hidden>동/읍/면</option>
+        <option value="b1">안서동</option>
+        <option value="b2">신부동</option>
+        <option value="b3">두정동</option>
+        <option value="b4">청수동</option>
+        <option value="b5">불당동</option>
+    </select>
+    <input id="submit" type="button" value="주소검색">
+</div>
+
+<!-- 지도 크기 설정 -->
+<div id="map" style="width:1000px;height:500px;"></div>
+
+<!-- 표시 테이블 -->
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>주소</th>
+            <th>위도</th>
+            <th>경도</th>
+            <th>그리드 X</th>
+            <th>그리드 Y</th>
+            <th>날짜</th>
+            <th>현재 시간</th>
+        </tr>
+        </thead>
+        <tbody id="mapList"></tbody>
+    </table>
+</div>
+
+<script>
+    //지도 불러오기
+    selectMapList();
+
+</script>
+</body>
+</html>
